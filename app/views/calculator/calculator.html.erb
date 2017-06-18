@@ -1,0 +1,12 @@
+<form action="<%= root_path %>" method="get" >
+  <input name="operation" type="text" value="<%= controller.operation %>"/>
+  <input name="submit" type="submit" value="Calculate"/>
+</form>
+
+<% if controller.error_message.present? %>
+  <p><strong><%= controller.error_message %></strong></p>
+<% end %>
+
+<% if controller.result.present? %>
+  <p>Result: <%= controller.result %></p>
+<% end %>
