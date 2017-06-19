@@ -8,5 +8,6 @@
 <% end %>
 
 <% if controller.result.present? %>
-  <p>Result: <%= controller.result %></p>
+  <p>Operation: <%= controller.operation %></p>
+  <p>Result: <%= number_with_precision(controller.result, strip_insignificant_zeros: true, precision: 2) %></p>
 <% end %>
