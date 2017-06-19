@@ -1,3 +1,5 @@
+require 'calculator/simple'
+
 class CalculatorController < ApplicationController
   template_attr :operation, :result, :error_message
 
