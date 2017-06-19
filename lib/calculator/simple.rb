@@ -7,7 +7,7 @@ module Calculator
     def initialize(operation:,
                    success: ->(result) { result },
                    failure: ->(error_message) { raise error_message })
-      self.operation = operation
+      self.operation = operation.gsub(/\s/, '')
       self.success = success
       self.failure = failure
     end

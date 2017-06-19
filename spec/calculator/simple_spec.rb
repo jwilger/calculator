@@ -63,4 +63,16 @@ RSpec.describe Calculator::Simple do
       expect(failure_handler).not_to have_received(:call)
     end
   end
+
+  context 'when the operation contains white space' do
+    let(:operation) { "5 * 3 + 1  + 6 / 85 + 9\n * 100\t" }
+    let(:expected_result) { 5.0*3.0+1.0+6.0/85.0+9.0*100.0 }
+    it 'calls the success handler with the correct result, 916.07' do
+      expect(success_handler).to have_received(:call).with(expected_result)
+    end
+
+    it 'does not call the failure handler' do
+      expect(failure_handler).not_to have_received(:call)
+    end
+  end
 end
